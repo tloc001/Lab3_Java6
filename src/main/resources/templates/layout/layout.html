@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html th:fragment="view(body)" lang="en" xmlns="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<nav th:replace="~{/layout/menu.html}" ></nav>
+<body th:replace="${body}">
+    Body layout
+</body>
+
+<footer>
+    <p>&copy; 2025 Your Company. All rights reserved.</p>
+</footer>
+</html>

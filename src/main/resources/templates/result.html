@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{/layout/layout :: view(~{::body})}" xmlns="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <li>Studen Information :</li>
+   <li>Name : [[${student.email}]]</li>
+   <li>Name : [[${student.name}]]</li>
+   <li>Name : [[${student.marks}]]</li>
+   <li>Name : [[${student.gender ? "Nam " : "Nu" }]]</li>
+   <li>Name : [[${student.country}]]</li>
+</body>
+</html>

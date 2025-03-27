@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"  th:replace="~{/layout/layout:: view(~{::body})}" xmlns="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<form th:object="${student}" action="/form/save" method="post">
+    <label for="email">Email:</label>
+    <input type="email" id="email" th:field="*{email}" >
+    <p th:errors="*{email}"></p>
+    <br>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" >
+    <p th:errors="*{name}"></p>
+    <br>
+
+    <label for="marks">Marks:</label>
+    <input type="number" step="0.1" id="marks" th:field="*{marks}">
+    <p th:errors="*{marks}"></p>
+    <br>
+
+    <label for="gender">Gender:</label>
+    <select th:field="*{gender}" id="gender" name="gender">
+        <option th:value="true">Male</option>
+        <option th:value="false">Female</option>
+    </select>
+
+    <p th:errors="*{gender}"></p>
+
+    <br>
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" th:field="*{country}" >
+    <p th:errors="*{country}"></p>
+
+    <br>
+
+    <button type="submit">Submit</button>
+</form>
+[[${message}]]
+<style>
+
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+p[th\\:errors] {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+</style>
+
+</body>
+
+</html>
